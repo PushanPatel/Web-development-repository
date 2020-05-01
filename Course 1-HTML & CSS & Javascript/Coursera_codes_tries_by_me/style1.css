@@ -1,0 +1,74 @@
+/* Refer to w3c to learn many other things about css and html */
+
+
+
+/* If any error is there in css file then it will just not reflect, no error message will be displayed so be careful  */
+body{   /*  This defines the general properties for body  */
+	background: black; /* Sets background color    */
+	color: white; /*  Sets text color  */
+}
+/* changes in body will be neglected for specific tags whose properties are explicitly changed like below h1   */
+a{/* this to define design properties for hyperlinks  */
+	color: gray; /* sets text color of hyperlink*/
+	
+}
+
+a:hover{/* a:hover selector used for the event when mouse pointer hovers over the link */
+	color:cyan;/* this will change the color when pointer hovers over the link*/
+	font-size: 10pt;/*this will change the same time*/
+	text-decoration: none;/* this is to define the decoration. in this case it will remove the underline decoration which is by default as we have specified none*/
+	background: darkblue;/* to change background of the link when it hover */
+}
+
+h1{
+	color: yellow;
+	/*font-family: sans-serif; */   /* Three fonts we will use as they work with all the browsers they are- sans-serif, serif, monospaced */
+							/*  by default it is serif */
+	font-family: monospace; /* each letter occupies same space in a grid in monospace. it is normally used when talking about coding as other two are appealing to the eye*/
+	/*font-family:"Times new roman" serif; */  /*by defalut it is simple serif but you can mention other serif styles such as Times new roman */
+	font-size: 25pt;/*to define the size of font*/
+}
+h3{
+	color: lightgreen;
+	font-family:sans-serif;
+	font-size: 16pt
+}
+ol{
+	color:pink;
+	font-family= "Times new roman" serif;
+}
+.indent{/* This way you can create any class(like .anything). but to see impact you have to add class="indent" (in this case) inside the tag*/
+	/* like <p class="indent"> </p> */
+	margin-left:10px; /* space from left margin */
+	/*margin-right: 40px;*//* space from right. when indenting a single specific word don't use this as this will leave space and then start next word */
+	color: cyan;/* this also not recommended for above problem stated*/
+}/* with classes we can modify any tag in whichever way we want and that to exclusive to those tags only and not all tags of that kind  */
+.gap_below{
+	margin-bottom:25px;
+	color: green;
+}
+
+@media (max-width: 1000px){ /*This is to make page responsive. If width of window(media) is less than 1000px then it will be this else this won't be applied.
+		this is dynamic so whenever you shrink your screen to less than 1000px then it will change. Try changing it again and again to see it work dynamically.*/
+	body{
+		background: white;
+		color: black;
+	}
+	.responsive{
+		display:inline-block;
+		width:400px;
+		border:1px solid black; 
+	}
+}
+
+@media (max-width: 750px){
+	.responsive{
+		display:inline-block;
+		width:200px;
+		
+	}
+}
+
+
+
+

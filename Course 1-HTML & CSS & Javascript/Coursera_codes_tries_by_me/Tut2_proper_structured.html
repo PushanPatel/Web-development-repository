@@ -1,0 +1,72 @@
+<!-- Go for developer mode or view page source to see the html file of any webpage
+		Inspect elemt gives you how the web has been read by browser including css part and etc.-->
+		
+<html><!-- Always start with html tag for proper structuring of html. Aesthetics are necessary for better understandability  
+		HTML wraps everything now. After this will come head and then body. Keep indentation for aesthetics -->
+	<head>
+	<!--  In head we keep information about the page. It is meta dat - data about the data 
+		Like title about a particular data, or whole page or a brief description. 
+		This information is used by search engines to give the best site to the user according to their need. SO keep 
+		title and description crisp and accurate 
+		also the css files come in metadata and so it will be in head-->
+		<title> The first structured webpage</title>
+		<!-- style 1.css is the first css file i have created -->
+		<link rel="stylesheet"
+			type="text/css"
+			href="style1.css"  
+		/>
+		<!--  rel= relationship- defines the relationship the link(file) will have with this html file 
+			type- defines the type of file it is
+			href- defines the file name/path
+			the css file will affect only this page and not the pages linked with it. So, we have define link for every page-->
+		      
+	</head>
+	<body>
+		<center><!--This is done by me. This used to centerise content -->
+
+			<a href="Tut2_proper_structured.html">
+				Home
+			</a>
+			&nbsp;     
+			<a href="Tut2_proper_about.html">
+				About me
+			</a>
+		</center>
+		<hr> </hr>
+		<h1>Intro</h1>
+		<img src="iceland.jpg" width="158px" />
+		<h3> This is a pic from Iceland </h3>
+
+		Programming Languages I know right now(25/04/2019):
+		<ol>
+			<li>C++</li>
+			<li>Python</li>
+			<li>Matlab</li>
+			<li>HTML</li>
+		</ol>
+		
+		<p class="gap_below">
+			<!-- below method can be used to apply to specific text in a tag like if we want only the starting of para to be indented the ndent only first word -->
+			This is new. Can be used for in writing book style.<br>
+			<span class="indent"> This</span> is a 3 day event. Participants will be provided with .stl files( which have been provided by Cortex Technologies Private Limited) which they have to convert to CAD files for each part and then assemble them according to the assembly stl file. 
+			
+		</p>
+		<p class="indent">
+			This way you declare a class and use it for particular tags only.
+			<br><!-- for breaking line -->
+			We have worked many times on CAD modelling but never have we actually checked how efficient the model is. We just go for trial and error form, i.e., if the system or model seems unstable after 3D printing or laser cutted parts arranged then redesign it and then again see whether it is working or not. This is a very time consuming process which leads to huge wastage of materials. So, why not learn something which could make our work efficient, and isn’t this the time when we can learn new things while in quarantine.
+			So, Tinkerer’s Lab has come up with an event to encourage everyone to get rid of laziness and hone their CAD skills. Tinker Simulation is an event which not only focuses on CAD modelling skills but also encourages students to develop dynamic simulation and stress analysis. 
+		</p>
+		
+		<div class="responsive">
+			column1
+		</div>
+		<div class="responsive">
+			column2
+		</div>
+
+	</body>
+
+</html>
+<!--  We have to make a responsive webpage so that it changes its structure based on size of window 
+so that it is usable in various devices such phone, laptop, tablet  -->

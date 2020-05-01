@@ -1,0 +1,57 @@
+
+<html>
+	<head>
+	
+		<title> The first structured webpage</title>
+
+		<link rel="stylesheet"
+			type="text/css"
+			href="bootstrap.css"  
+		/>
+		<!-- Bootstrap gives a descent layout with responsive nature.
+		you can apply as many css files as you want -->
+		<link rel="stylesheet"
+			type="text/css"
+			href="style2.css"  
+		/>
+	</head>
+	<body>
+		<center>
+			<a href="Tut2_proper_structured.html">
+				Home
+			</a>
+			&nbsp;     
+			<a href="Tut2_proper_about.html">
+				About me
+			</a>
+		</center>
+		<hr> </hr>
+	
+		
+		
+		<div class="container"> <!-- Div tags define areas of the page for styling. used for connecting css files  -->
+			<h1>Intro</h1>
+			<div class="row"> <!-- There can be many rows and each row adds up to 12 columns -->
+				<div class="col-md-6 thin_border"> <!-- you can add many classes of different css files together like here where col-md-6 belongs bootstrap and thin_border to style2--> 
+						this for me
+				</div>
+				<div class="col-md-6 thin_border">
+						this for you
+				</div>
+			</div>
+		</div>
+		<div class="container"> <!-- Div tags define areas of the page for styling. used for connecting css files  -->
+			<h2>Not Intro</h2>
+			<div class="row"> <!-- There can be many rows and each row adds up to 12 columns -->
+				<div class="col-md-3 thin_border"> <!-- you can add many classes of different css files together like here where col-md-6 belongs bootstrap and thin_border to style2--> 
+						this for me
+				</div>
+				<div class="col-md-8 thin_border">
+						this for you
+				</div>
+			</div><!--so in the end sum of columns should be less than equal to 12. this is because bootstrap by default keeps 12 divisions for a wide screen like that of desktop(1360x768) related-->
+		</div><!--Bootstrap grids are responsive so when the screen resolution goes down it will shift some columns to next row to adjust data so that it is visible at all times --> 
+	
+	</body>
+
+</html>

@@ -1,0 +1,18 @@
+/** This is a comment that the browser will ignore,
+* Put your CSS code into this file
+*/
+/* refer w3c for more about css */
+body{
+	background: cyan; /* This is to change the background color of page(body) to cyan   */
+}
+h1{/*   here we are changing properties of h1   */
+	color: darkblue;/* the text color of h1 is changed to darkblue */
+	font-family: sans-serif;/* Font is changed from default to sans-serif  */
+	font-size: 25pt;/* Font size is altered here to 25 pt */
+	font-style: italic; /* To Italicize the text */
+	text-shadow: 2px 2px 5px red
+}
+h1:hover{/* this is to change properties dynamically when we hover mouse pointer over the h1 text */
+	color: red;/* text color to red */
+	text-decoration: underline overline purple wavy /* Under line the text *//* text decoration: (line) (color) (style)
+}

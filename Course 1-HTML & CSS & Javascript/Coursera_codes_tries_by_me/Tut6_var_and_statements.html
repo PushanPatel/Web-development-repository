@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script> 
+		<title> Variables and If else statements </title>
+	</head>
+	
+	<body>
+		<h1>The count is :<span id='number' onclick="count();"> </span></h1><!-- The content will be given by javascript itself  -->
+	<!-- Used variable in Tut5_Image_gallery also to make it even more responsive.  -->
+		
+		
+		
+		
+	</body>
+	<script type="text/javascript">
+		var counter=0; //variable declaration: var variable_name= value; example: var n=10;   var is a keyword just like function
+		$("#number").html(counter);
+		function count(){
+			counter+=1;
+			$("#number").html(counter);// to update html
+		}
+	</script>
+</html>

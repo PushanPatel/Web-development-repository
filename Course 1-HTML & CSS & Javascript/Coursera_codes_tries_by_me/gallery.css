@@ -1,0 +1,36 @@
+/* use this to put borders around things... */
+
+
+
+.crop-img{
+  max-height:150px;
+  max-width:100%;
+  margin-bottom: 10px;
+}
+
+.large-img{
+	
+  max-width:100%;
+  margin-top: 10px;
+  display: block;/* these three lines to center the image- display,margin-left and margin-right*/
+  margin-left:auto;
+  margin-right:auto;
+  border: 10px groove gray;
+}
+
+.large-img2{
+	
+  max-width:50%;
+  margin-top: 10px;
+  display: block;/* these three lines to center the image- display,margin-left and margin-right*/
+  margin-left:auto;
+  margin-right:auto;
+  border: 10px dashed gray;
+}
+
+.align{
+	display: block;
+  margin-left:auto;
+  margin-right:auto;
+	
+}

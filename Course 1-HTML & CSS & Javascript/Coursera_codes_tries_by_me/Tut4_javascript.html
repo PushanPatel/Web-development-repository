@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script> <!-- this loads jQuery compressed version directly from its webpage. You can include it from 
+			the jquery js file in the folder too. just write it in the src. -->
+			
+	</head>
+	
+	<body>
+		<!-- simple javascript code implemented through html. This is called when the text is clicked 
+		alert('hello'); is Javascript and alert is a function here with string(hello) as a parameter -->
+			<!-- Coursera comment:
+			The onclick attribute is the code that happens when the element is clicked.	     
+             The value of the attribute is some	javascript code. In this case it creates an alert pop up dialog
+			 -->
+		 <!-- You can include more than one commands/functions inside onclick: here we have log as well as alert
+			 
+			 Parts of the window are called objects in javascript such as document,console,element. In below case console is an object whose function log 
+			 is being called
+			 
+			 You can test JavaScript code by printing it to console. Good use of consoles in debugging. To find whether the script is not working or the 
+			 event(like mouse click not working)
+			 
+		-->
+		<h1 id="title" onclick="alert('hello'); console.log('Hello Console operations');" > Hello </h1>
+		<!--  jQuery
+				In this course we will be using the library jQuery to manipulate HTML DOM. While it is possible to do this in plain JavaScript, jQuery makes it much easier	  -->
+		
+		<!-- Coursera comment:
+ 		in this example use use jQuery to change the content itself. The $ is shorthand for the jQuery function
+		 We are passing in a CSS selector which gets this element by its id. The html function sets the html contentof an element -->
+		<h3 id="title1" onclick="$('#title1').html('Goodbye');"> Hello World </h3>
+		<!--  $ sign is shorthand for jQuery. We can write jQuery instead of $ too. #title1 is a css selector which tells js which id to work on. you can keep it h1 
+		or any other selector too but this is done to operate on a particular element. Here, $("#title1") is a function which returns an object whose function
+		html is called. The html is a function that manipulates the html body content. here we pass the argument "Goodbye". So Hello world changes to Goodby when 
+		clicked by user on Hello World. Here it was text but we could have put a link as well.		
+		We had to give id='title1' so as to differentiate it from above h1. If kept it title then the operation would change the first declared id="title", i.e. h1 instead of h3. -->
+		<h3 id="title2"> Come here </h3>
+		<!-- below code from w3c: https://www.w3schools.com/js/js_htmldom_events.asp  , https://www.w3schools.com/js/tryit.asp?filename=tryjs_events_mouseover-->
+		<h3 id='title3' onmouseover="Hover($('#title3'));" onmouseout="HoverOut($('#title3'));" > Hover here</h3>
+		
+		<div id='title4' onclick="sayGoodbye($('#title4'));">  Hello there </div>
+	</body>
+	<!--Coursera comment:
+ 	the script tag is where you can put
+ 	more complex scripts
+	-->
+	<!--the script is loaded as soon as the webpage is loaded so we won't see "Come here". Instead it will directly show Not Again.
+		to create a function in javascript:     function is a keyword used to define a function
+		function function_name(arguments){
+				body_of_funtion
+		}
+		
+		functions can used in order to change the nature of function when it is called. Like print goodbye when 
+		clicked on hello and when on goodby then change it back to hello. Functions can also be used as objects and passed as arguments.
+		
+		
+		variable declaration: var variable_name= value; example: var n=10;   var is a keyword just like function
+	-->
+	<script type="text/javascript">
+		$('#title2').html('Not Again');
+		function Hover(obj){
+			obj.html('Not this Again');
+		}
+		function HoverOut(obj){
+			obj.html("Hover here");
+		}
+		
+		function sayGoodbye(obj){
+			console.log("goodbye");// not required though
+			obj.html("Goodbye");
+			obj.click(function () {//Here we pass a function without a name. It does not need a  name here and so this is an anonymous function. it directly understands it as the
+// function whose argument it is acting as. here click is the function( function of jquery objects) which is understood as the argument(the anonymous function). we dont require to name it again.
+				obj.html("Hello there");
+				obj.off("click");// this turns off this functionality. so it will go back to previous functionality that is to change text to goodbye.
+			});
+		};
+	</script>
+</html>

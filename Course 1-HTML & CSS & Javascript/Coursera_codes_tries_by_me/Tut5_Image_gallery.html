@@ -1,0 +1,163 @@
+<html>
+	<head>
+		<title>Image Gallery</title>
+		<!-- this code is a modified version of the code provided by coursera -->
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="bootstrap.css"
+		      />
+
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="gallery.css"
+		      />	
+
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		
+		<a 
+		href="Tut5_Image_gallery.html">
+			Home
+		</a>
+		 &nbsp;
+		<a 
+		href="Tut5_zoom.html">
+			Zoom in
+		</a>
+
+		<hr></hr>
+		<div class="container">
+			<h1>Image Gallery</h1>
+			<!--
+			   These are the thumbnail images.
+			   They are laid out using the 
+			   bootstrap grid.
+			   I have given them all the class
+			   "crop-img" which I use in the
+			   css and the javascript code.
+			-->
+			<div class="row">
+				<div class="col-md-3">
+					<img id='i1' class="crop-img" 
+					  src="skull.jpg" alt="Skull artifact"/> 
+				</div>
+				<div class="col-md-3">
+					<img id='i2' class="crop-img" 
+					  src="food.jpg" alt="South Indian Food"/> 
+				</div>
+				<div class="col-md-3">
+					<img id='i3' class="crop-img" 
+					  src="flowers.jpg" alt="Flowers"/> 
+				</div>
+				<div class="col-md-3">
+					<img id="i4" class="crop-img" 
+					   src="denmark.jpg" alt="Denmark"/> 
+				</div>
+			</div>
+			<!--
+				this is the large image which is
+				on a row of its own. 
+				I will change it source in the 
+				javascript
+			-->
+			<div class="row">
+				<div class="col-md-1">
+					<button id="backward">&lt;</button>
+				</div>
+				<div class="col-md-10">
+					<button id="Button" class="align">Pause</button>
+				</div>
+				<div class="col-md-1">
+					<button id="forward">&gt;</button> <!--  This is to create a button with this > symbol . id =forward -->
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<img class="large-img" 
+					  src="skull.jpg" /> 
+				</div>
+				<div class="col-md-6">
+					<img class="large-img2" 
+					src="iceland.jpg"/> 
+				</div>
+			</div>
+			
+		</div>
+
+	</body>
+	<script>
+		// when we click on the thumbnail
+		// we set the src attribute of the 
+		// big image to be the same as the 
+		// src of the image we have clicked on
+		// ("this"). This loads the same
+		// image file into the big image
+		$(".crop-img").click(function(){ //This time we are not getting object by id but by the class of the tag
+			$(".large-img").attr('src', $(this).attr('src')); //attr function sets or gets the sttribute properties. It changes the 
+			//source attribute to the source of 'this'(the image which was clicked). This represents the the html element which was clicked upon(in this case) 
+		});
+		/*
+		
+		$(".crop-img").mouseover(function(){ //This is innovated by me. Refer jquery references from w3c
+			$(".large-img2").attr('src',$(this).attr('src'));
+		});
+		//better version below:
+		*/
+		$(".crop-img").hover(function(){ //This is innovated by me. Refer jquery references from w3c
+				$(".large-img2").attr('src',$(this).attr('src'));
+			},function(){ 
+				$(".large-img2").attr('src','iceland.jpg');
+		});
+		
+		/* Below part refers to Image gallery after imploying variables in javascript */
+		
+		var counter=1;
+		$("#i"+counter).click(); // This way we assign a virtual click on the image with id i(counter)->we created an id instead of just writing it. We may not have actually clicked on it though.
+		
+		
+		$("#backward").click(function (){ 
+			counter = counter - 1; 
+			if(counter<1){
+				counter=4;
+			}				
+			$("#i"+counter).click();
+		});
+
+		$("#forward").click(function (){ 
+			counter = counter + 1;
+			if(counter>4){
+				counter=1;
+			}
+			$("#i"+counter).click();
+		});
+	/* setInterval function is a function which calls another function at some intervals. it works in milliseconds. requires 2 arguments: the function and time interval   */
+		var paused=false;
+		
+		setInterval(function(){
+			if(paused==false){//it means that it will virtually click forward button in every 4s interval
+				$("#forward").click();
+			}
+		},4000);
+		$("#Button").click(function(){
+			if(paused==false){ // can also write if(!paused)
+				paused=true;
+				$("#Button").html("Resume");
+				
+			}
+			else{
+				paused=false;
+				$("#Button").html("Pause");
+			}
+		});
+	</script>
+
+</html>
+
+
+
+
+
+
+
