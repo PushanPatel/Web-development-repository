@@ -1,0 +1,74 @@
+<!DOCTYPE html><!--This method is to define the type of documentation it is. Here it is html 
+				Note:L It is better to make a boilerplate, it really refers to the idea that you've
+				got some ready-made code and you're just kind of changing bits of it.
+				They can be used for classes related one functionality(Like collapsed navbar) along with tags to help understanding how the class is used
+				and all the parameters required. It makes work easy.
+				-->
+
+<html lang="en"><!--  This is to define the language of the page-->
+	<head>
+		<title></title>
+
+		<link href="css/bootstrap.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// This below is for people who are using Internet Explorer 8 still
+		This is for Graceful degradation- that is the web page will work with older browsers as well. So it will be flexible and increases the User amount as 
+		 not everyone might be using latest versions of Browsers.
+		-->
+		<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+  
+		<!-- Navigation bars are required to display user where they can go to on the website 
+		nav tags are important because they increase accessibility of your site. When a screen reader which, say someone who doesn't
+		have good vision is visiting your site and they're using some sort of text based way of interacting with the site and they can't see the graphics, 
+		then the nav bar tells the reader that they're using, okay, everything inside this tag relates to navigation. So that's why we use a nav bar, for
+		that semantic meaning of our tags.
+		
+		div tags are used to wrap content together
+		-->
+		<nav class="navbar navbar-default"> <!--  This class gives a decent look to nav bar to distinguish from rest of content -->			
+			<div class="container-fluid"> <!-- This class is good for navigation bars. It defines how it will look(squish the content) when size is changed -->
+				<div class="navbar-header">
+						<!-- Bootstrap allows us to collapse whole nav Bar when screen size becomes small. It is essential feature
+						towards responsiveness and aesthetics -->
+					<button type="button" 
+						class="navbar-toggle collapsed" 
+						data-toggle="collapse"  
+						data-target="#Main_Nav" 
+						area-expanded="false" > Open</button><!-- class="navbar-toggled collapsed"  to show when navbar is collapsed
+																	data-toggle="collapse"  it adds extra functionality from the bootstrap js file
+																	data-target="#Main_Nav" it defines the target of the functionality
+																	area-expanded="false" -->
+				</div>
+				<!-- Uncollapsed version when screen size is large enough. Display nav bar and hide button when screen is large-->
+				<div class="collapse navbar-collapse" id="Main_Nav">
+					<ul class="nav navbar-nav"><!-- This class orgainised the list according to the Navigation bar display-->
+						<li class="active"> <a href="index.html"> Home </a> </li> <!-- class="Active" highlights the page that is active. Here it is Home. It tells user where they are now-->
+						<li> <a href="albums.html"> Albums </a> </li> <!-- href="#" will do nothing . But it wont show any error as well-->
+						<li> <a href="photos.html"> All photos </a> </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+	
+		<div class="container"><!-- Container class wraps up the content -->
+			<h1> Hello </h1>
+			<!-- Breadcrumb trail to let user know where they are right now. It uses ordered list as the order here matters unlike navbar -->
+			<ol class="breadcrumb">
+				<li> <a href="index.html"> Home </a> </li>
+			</ol>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script><!-- This library gives extra functionality to boostrap for navigation bars etc to give better User experience -->
+
+	</body>
+</html>

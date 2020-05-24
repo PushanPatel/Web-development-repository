@@ -1,0 +1,2 @@
+This ppt contains crucial points regarding website designing and should be read.
+Concepts like breadcrumb trail are very important

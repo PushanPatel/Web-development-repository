@@ -1,0 +1,6 @@
+For all components of bootstrap:
+https://getbootstrap.com/docs/3.4/components/    
+
+https://getbootstrap.com/docs/4.4/components/navbar/?
+https://getbootstrap.com/docs/4.4/components/breadcrumb/
+https://getbootstrap.com/docs/3.4/css/#grid

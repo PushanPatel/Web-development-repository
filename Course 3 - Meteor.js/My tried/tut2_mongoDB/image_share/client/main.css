@@ -1,0 +1,38 @@
+
+
+
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+.js-image{
+		max-height: 200px;
+		min-height:200px;
+		max-width: 100%;
+}
+/*  
+meteor search twbs
+twbs stands for twitter bootstrap packages which is most popular one.
+meteor add twbs:bootstrap
+This is to add the bootstrap package. meteor search and meteor add ae used to add new packages
+
+If some problem occurs then
+ (popper.js is dependency which has to be installed as well) meteor npm install --save popper.js and
+meteor npm install --save bootstrap
+
+and add this file to main.css @import '{}/node_modules/bootstrap/scss/bootstrap';
+and main.js  import 'bootstrap/dist/js/bootstrap.bundle';
+
+
+
+above all were not working so i tried below which seems to work:
+
+(popper.js is dependency which has to be installed as well) meteor npm install --save popper.js and
+meteor npm install --save bootstrap
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/js/bootstrap.bundle';
+
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
+*/

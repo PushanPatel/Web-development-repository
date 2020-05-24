@@ -1,0 +1,14 @@
+.album_cover{
+	width:40%;
+	border: 20px solid gray;
+
+}
+.photo_list{
+	width: 80%;
+	max-height: 200px;
+	border:3px dashed black;
+}
+.photo_specific{
+		width: 70%;
+	
+}

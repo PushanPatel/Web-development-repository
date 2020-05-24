@@ -1,0 +1,74 @@
+<head>
+  <title>image_share</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+  {{> image_add_form}}
+  {{> image}}
+
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="image_add_form">
+	<div class="modal fade" id="image_form_modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title">
+					
+					</div>
+				</div>
+				<div class="modal-body">
+					<form class='js-add-image'>
+						<input type="text" name="img_src" />
+						<br> <input type="text" name="img_alt"/>
+						<br>
+						<button class="btn btn-success">Save </button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Above modal is used to present the form in better way
+	<form class='js-add-image'>
+		<input type="text" name="img_src" />
+		<br> <input type="text" name="img_alt"/>
+		<br>
+		<button class="btn btn-success">Save </button>
+	</form>
+	-->
+</template>
+
+<template name='image'>
+<!--	<img src="./public/food.jpg" alt="Food"/>  --><!-- Local files not supported by google chrome -->
+	<button class="btn btn-success js-show-image-form">Image Add Form</button>
+	<div class='container-fluid'>
+		<div class='row'>
+			{{#each images}}
+			<div class=' col-xs-12 col-md-3'>
+				<div class='thumbnail'>
+				<!--	<img onclick="alert('{{img_alt}}')" style='height:200px' src="{{img_src}}" alt="{{img_alt}}"/>  -->
+					<img class='js-image' src='{{img_src}}' alt='{{img_alt}}' id="{{_id}}" /><!-- meteor style!!!--> <!--data-id='{{@index}}'-->
+					<div class="caption">
+						<h3>Ratings: {{Rating}}   </h3>
+						<p> {{img_alt}} </p>
+						<p> {{>starsRating mutable=true class='js-rate-image' id=_id}}</p>
+						<button class=' js-del-image btn btn-warning'>Delete </button> <!-- warning gives a different kind of color to the button. You can try success as well and many more -->
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</template>
+

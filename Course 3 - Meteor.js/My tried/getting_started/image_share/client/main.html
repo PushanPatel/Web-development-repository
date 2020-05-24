@@ -1,0 +1,40 @@
+<head>
+  <title>image_share</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+  {{> image}}
+  {{> info}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+<template name='image'>
+<!--	<img src="./public/food.jpg" alt="Food"/>  --><!-- Local files not supported by google chrome -->
+	<div class='container-fluid'>
+		<div class='row'>
+			{{#each images}}
+			<div class=' col-xs-12 col-md-6'>
+				<div class='thumbnail'>
+				<!--	<img onclick="alert('{{img_alt}}')" style='height:200px' src="{{img_src}}" alt="{{img_alt}}"/>  -->
+					<img class='js-image' style='height:300px' src='{{img_src}}' alt='{{img_alt}}' data-id='{{@index}}'/><!-- meteor style!!!-->
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</template>
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>

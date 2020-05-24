@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en"><!--  This is to define the language of the page-->
+	<head>
+		<title></title>
+
+		<!-- <link href="css/bootstrap.css" rel="stylesheet"> This is default bootstrap layout-->
+		<link href="css/bootstrap_slate.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// This below is for people who are using Internet Explorer 8 still
+		This is for Graceful degradation- that is the web page will work with older browsers as well. So it will be flexible and increases the User amount as 
+		 not everyone might be using latest versions of Browsers.
+		-->
+		<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+  
+		<nav class="navbar navbar-expand-md navbar-light bg-light">
+			<button class="navbar-toggler" 
+					type="button"
+					data-toggle="collapse"
+					data-target="#Main_Nav" 
+					aria-expanded="true" 
+					aria-controls="Main_Nav"
+					aria-label="Toggle navigation" > <span class="navbar-toggler-icon"></span> </button>
+				
+				<!-- Uncollapsed version when screen size is large enough. Display nav bar and hide button when screen is large-->
+			<div class="collapse navbar-collapse" id="Main_Nav">
+				<ul class="navbar-nav"><!-- This class orgainised the list according to the Navigation bar display-->
+					<li class="nav-item"> <a href="index.html" class="nav-link"> Home </a> </li> <!-- class="Active" highlights the page that is active. Here it is Home. It tells user where they are now-->
+					<li class="nav-item"> <a href="albums.html" class="nav-link"> Albums </a> </li> <!-- href="#" will do nothing . But it wont show any error as well-->
+					<li class="nav-item active"> <a href="photos.html" class="nav-link"> All photos </a> </li>
+				</ul>
+			</div>
+
+		</nav>
+		<!-- above same as index.html-->
+
+	
+		<div class="container"><!-- Container class wraps up the content -->
+			<h1> All photos: </h1>
+			<ol class="breadcrumb"><!-- Breadcrumb-->
+				<li class="breadcrumb-item"> <a href="index.html"> Home </a> </li> <!-- class="breadcrumb-item"  is required(mandatory) for new(latest)
+				bootstrap files. Refer to https://getbootstrap.com/docs/4.4/components/breadcrumb/ for more about breadcrumbs --> 
+				<li class="breadcrumb-item"> <a href="albums.html"> Albums </a> </li>
+				<li class="breadcrumb-item active"> <a href="photos.html"> All photos </a> </li>
+				
+			</ol>
+			<div class="row">
+				<div class="col-xs-6 col-md-3 col-lg-2"><!-- col-xs-6 means that when screen size is small the grid will occupy 6 col out of 12. md stands medium size. lg for large -->
+					<a href="photo1.html"> <img class="photo_list" src="./images/img6.jpg" alt="Delhi - India Gate"/>  </a>
+				</div>
+				<div class="col-xs-6 col-md-3 col-lg-2">
+					<a href="photo1.html"> <img class="photo_list" src="./images/food2.jpg" alt="Indian Thali"/> </a>
+				</div>
+				<div class="col-xs-6 col-md-3 col-lg-2 ">
+					<a href="photo1.html"> <img class="photo_list" src="./images/img3.jpg" alt="Delhi - India Gate"/>  </a>
+				</div>
+				<div class="col-xs-6 col-md-3 col-lg-2 ">
+					<a href="photo1.html"> <img class="photo_list" src="./images/food1.jpg" alt="Indian Thali"/> </a>
+				</div>
+				<div class="col-xs-6 col-md-3 col-lg-2 ">
+					<a href="photo1.html"> <img class="photo_list" src="./images/img1.jpg" alt="Indian Thali"/> </a>
+				</div>
+				<div class="col-xs-6 col-md-3 col-lg-2 ">
+					<a href="photo1.html"> <img class="photo_list" src="./images/food5.jpg" alt="Indian Thali"/> </a>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap_latest.min.js"></script><!-- This library gives extra functionality to boostrap for navigation bars etc to give better User experience -->
+
+	</body>
+</html>
