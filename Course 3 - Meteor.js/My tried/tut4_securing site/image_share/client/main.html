@@ -1,0 +1,110 @@
+<head>
+  <title>image_share</title>
+  
+</head>
+<!-- Put everything into templates. These templates will be accessed by iron router. Routing changes the html instead of going to another webpage-->
+<body>
+
+
+</body>
+<template name="MainLayout">
+	<!-- Super template that contains all template for the page. This is because the render option of routing erases everything first and then puts the template.
+	so, we cant use that to render all the templates at once. yield is a special holder for routing-->
+	{{>yield "navbar"}}
+	{{>yield "main"}}
+	
+</template>
+<template name="Welcome">
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Welcome to Meteor!  {{username}}</h1>  
+			<a href='/images' class='btn btn-info'>ENTER</a>
+		</div>
+	</div>
+</template>
+
+<template name="navbar">
+	<div class="container">
+		<div class='jumbotron'>
+			<nav class="navbar navbar-default navbar-fixed-top"><!-- fixed top is not working in my laptop. I dont know why -->
+				<div class="container">
+					{{> loginButtons}}
+				</div>
+			</nav>
+		</div>
+	</div>
+</template>
+
+<template name='single_image'>
+	<div class="container">
+		<h2>{{img_alt}}</h2>
+		<a href="/images"><img class='single-img' src={{img_src}} alt={{img_alt}}></a>
+	</div>
+</template>
+
+
+<template name="image_add_form">
+	
+	<div class="modal fade" id="image_form_modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-title">
+						Image Add Form
+					</div>
+				</div>
+				<div class="modal-body">
+					<form class='js-add-image'>
+						<input type="text" name="img_src" />
+						<br/> <input type="text" name="img_alt"/>
+						<br/> <br/>
+						<button class="btn btn-success">Save </button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-warning" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</template>
+
+<template name='image'>
+	<div class='container'>
+		
+		{{#if currentUser}}
+			<button class="btn btn-success js-show-image-form">Image Add Form</button>
+			<br /><!-- renders only when the user is logged in-->
+		{{/if}}
+		<h3>
+			{{#if filteredImages}}
+				Filtered images based on user : {{getUser filteredImages}} <br />
+				<a href="#" class='js-unset-image-filter'>Remove filter</a>
+			{{/if}}
+		</h3>
+		<div class='row'>
+			{{#each images}}
+			<div class=' col-xs-12 col-md-4 col-lg-3'>
+				<div class='thumbnail'>
+				<!--	<img onclick="alert('{{img_alt}}')" style='height:200px' src="{{img_src}}" alt="{{img_alt}}"/>  -->
+				<!--	<img class='js-image' src='{{img_src}}' alt='{{img_alt}}' id="{{_id}}" /> meteor style!!!--> <!--data-id='{{@index}}'-->
+					<a href="/images/{{_id}}"><img class='js-image' src='{{img_src}}' alt='{{img_alt}}' id="{{_id}}" /></a>
+					<div class="caption">
+						<h3>Ratings: {{Rating}}   </h3>
+						<p> {{img_alt}} </p>
+						<p> {{>starsRating mutable=true class='js-rate-image' id=_id}}</p>
+						
+							<p>User: 
+								<a href='#' class='js-set-image-filter'>{{getUser createdBy}}</a>
+							</p><!-- this is how you access a function defined in js file in html -->
+						
+						<button class=' js-del-image btn btn-warning'>Delete </button> <!-- warning gives a different kind of color to the button. You can try success as well and many more -->
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</template>
+
