@@ -8,3 +8,5 @@ I had used Notepad++ as the text editor for the purpose.
 
 The folder HeavenlyPlaces contains the project that I did in my seventh standard when HTML was taught to me for first time.
 That is why the files won't contain any comments. As I did this course much later for the purpose of brushing up concepts and learning new ones
+
+If a meteor app is not working then type this in command prompt: meteor npm install --save babel-runtime
