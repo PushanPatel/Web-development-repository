@@ -1,0 +1,86 @@
+<template name="docItem"><!--Template for route 2 -->
+	<div class="container top_margin">
+		<h1>Welcome to Text Circle!</h1>
+		{{> display_date}}
+		{{> docMeta}}
+		{{> editingUsers}}
+		<!--{{> editor}} for normal editor. Below we make an editor for html preview. 6 cols for editor and 6for preview of webpage for the text in editor-->
+		<div class='row'>
+			<div class='col-md-6'>
+				{{> editor}}
+			</div>
+			<div class='col-md-6'>
+				{{> viewer}}
+			</div>
+		</div>
+		<div>
+			{{> insertCommentForm}}
+		</div>
+		<div>
+			{{> commentList}}
+		</div>
+		
+	</div>
+</template>
+
+<template name="insertCommentForm">
+	<!-- {{>quickForm collection="Comments" id="insertCommentForm" type="method" meteormethod="addComment"}}
+	not useful as it can't store docid -->
+    {{#autoForm collection="Comments" id="insertCommentForm" type="method" meteormethod="addComment"}}
+    <fieldset>
+      <legend>Comment</legend>
+      {{> afQuickField name='title'}}
+      {{> afQuickField name='body' rows=6 value="Write your comment here"}}
+      {{> afQuickField name='docid' value=docid type="hidden"}}
+      {{> afQuickField name='owner' value='123' type="hidden"}}
+			{{> afQuickField name='createdOn' type="hidden"}}
+		</fieldset>
+		<button type="submit" class="btn btn-primary">Insert</button>
+	{{/autoForm}}	
+	
+</template>
+<template name="editor">
+	 {{>sharejsCM docid=docid onRender=config id="editor" mode="javascript"}}<!-- config and docid from helper functions-->
+</template>
+
+<template name='viewer'>
+	<!-- Unlike other tags, iframe contains a whole HTML document to play with. It is like highest(top) level tag -->
+	<iframe id='viewer_iframe'>
+	
+	</iframe>
+</template>
+
+<template name='docMeta'>
+	{{#with document}}
+		<span class='h1'>{{> editableText collection="documents" field="title"}}</span>
+		{{#if canEdit}}
+			<div class="form-group form-check">
+				<input type="checkbox" class="form-check-input js-tog-private" id="exampleCheck1">
+				<label class="form-check-label js-tog-private" for="exampleCheck1">Private Doc</label>
+			</div>
+		{{/if}}
+	{{/with}}
+</template>
+
+<template name='editingUsers'>
+	<p>Editors:
+  {{#each users}}
+  <span class="badge badge-info">{{username}}</span>
+  {{/each}}
+  </p>
+</template>
+
+<template name='display_date'>
+	{{current_date}}
+	<br />
+</template>
+
+<template name="commentList">
+	<ul>
+		{{#each comments}}
+			<li>{{title}}
+			<p>{{body}}</p>
+			</li>
+		{{/each}}
+	</ul>
+</template>

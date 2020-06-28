@@ -1,0 +1,32 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+.top_margin{
+	margin-top:50px;
+}
+html {
+  font-size: 100%; }
+#viewer_iframe{
+	border:1px solid gray;
+	resize:both;
+	width:100%;
+	height:300px;
+}
+.light-border{
+	border:1px solid gray;
+	width:100%;
+}
+/*
+.nav_margin{
+	margin-right:70px;
+}
+
+not required. mention in loginsButton to align the form on right side.
+*/
+
+/*
+To add twitter style bootstrap(from Atmosphere) we need the following code
+meteor add twbs:bootstrap --allow-incompatible-update 
+Such code is required as some incompatible-update are required for .
+*/
